@@ -1,0 +1,46 @@
+package net.f3322.wry333.web.servlet;
+
+import net.f3322.wry333.bean.User;
+import net.f3322.wry333.service.UserService;
+import net.f3322.wry333.service.UserServiceImpl;
+import org.apache.commons.beanutils.BeanUtils;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
+
+@WebServlet("/loginServlet")
+public class LoginServlet extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        this.doPost(req,resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Map<String, String[]> pmap = req.getParameterMap();
+        User user = new User();
+        try {
+            BeanUtils.populate(user,pmap);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+        UserService us = new UserServiceImpl();
+        User login_user = us.login(user);
+        if(login_user != null){
+            req.getSession().setAttribute("user",login_user);
+            req.getRequestDispatcher("/indexServlet").forward(req,resp);
+        }else {
+            req.setAttribute("login_msg","账号或密码错误");
+            req.getRequestDispatcher("/jsp/bin/Login.jsp").forward(req,resp);
+        }
+
+    }
+}
