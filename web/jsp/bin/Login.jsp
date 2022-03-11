@@ -56,6 +56,9 @@
         body{
             background-image: url("../../res/img/cover.jpg");
         }
+        input{
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>

@@ -53,8 +53,8 @@
                 <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">切换导航</button>
             </p>
             <div class="jumbotron">
-                <h1>公告名</h1>
-                <p>简介内容</p>
+                <h1><%out.print(request.getAttribute("this"));%></h1>
+                <p>关于各个学院的简介内容</p>
             </div>
             <div class="row">
                 <c:forEach items="${list}" var="notice" varStatus="s">
