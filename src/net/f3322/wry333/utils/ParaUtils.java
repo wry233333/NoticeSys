@@ -1,5 +1,6 @@
 package net.f3322.wry333.utils;
 
+import net.f3322.wry333.bean.Notice;
 import net.f3322.wry333.bean.User;
 import org.apache.commons.beanutils.BeanUtils;
 
@@ -26,5 +27,20 @@ public class ParaUtils {
             return null;
         }
         return user;
+    }
+
+    public static Notice populate_n(HttpServletRequest request){
+        Notice notice = new Notice();
+        Map<String, String[]> parameterMap = request.getParameterMap();
+        try {
+            BeanUtils.populate(notice,parameterMap);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+            return null;
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return notice;
     }
 }
