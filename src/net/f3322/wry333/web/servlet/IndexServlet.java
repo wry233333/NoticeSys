@@ -1,9 +1,9 @@
 package net.f3322.wry333.web.servlet;
 
+import net.f3322.wry333.bean.Institute;
 import net.f3322.wry333.bean.Notice;
 import net.f3322.wry333.service.NoticeService;
 import net.f3322.wry333.service.NoticeServiceImpl;
-import net.f3322.wry333.utils.ParaUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,10 +25,13 @@ public class IndexServlet extends HttpServlet {
         String institute = (String) req.getParameter("institute");
         NoticeService noticeService = new NoticeServiceImpl();
         List<Notice> list = noticeService.search(institute);
+        List<Institute> strings = noticeService.institute();
         for (Notice l:list) {
             l.toString();
         }
         req.setAttribute("list",list);
+        req.setAttribute("institute",strings);
+        req.setAttribute("this",institute);
         req.getRequestDispatcher("/jsp/notice/main.jsp").forward(req,resp);
     }
 }

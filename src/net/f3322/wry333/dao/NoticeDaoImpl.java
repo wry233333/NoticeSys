@@ -1,5 +1,6 @@
 package net.f3322.wry333.dao;
 
+import net.f3322.wry333.bean.Institute;
 import net.f3322.wry333.bean.Notice;
 import net.f3322.wry333.utils.JDBCUtils;
 import org.springframework.dao.DataAccessException;
@@ -16,6 +17,19 @@ public class NoticeDaoImpl implements NoticeDao{
         String sql = "SELECT * FROM notice WHERE institute = ?";
         try {
             list = jdbcTemplate.query(sql,new BeanPropertyRowMapper<Notice>(Notice.class),institute);
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return list;
+    }
+
+    @Override
+    public List<Institute> institute() {
+        List<Institute> list = null;
+        String sql = "SELECT * FROM institute ";
+        try {
+           list = jdbcTemplate.query(sql,new BeanPropertyRowMapper<Institute>(Institute.class));
         } catch (DataAccessException e) {
             e.printStackTrace();
             return null;
