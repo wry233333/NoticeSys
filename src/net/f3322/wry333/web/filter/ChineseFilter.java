@@ -1,8 +1,6 @@
 package net.f3322.wry333.web.filter;
 
 
-import com.sun.deploy.net.HttpRequest;
-
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
