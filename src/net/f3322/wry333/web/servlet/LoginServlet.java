@@ -3,6 +3,7 @@ package net.f3322.wry333.web.servlet;
 import net.f3322.wry333.bean.User;
 import net.f3322.wry333.service.UserService;
 import net.f3322.wry333.service.UserServiceImpl;
+import net.f3322.wry333.utils.ParaUtils;
 import org.apache.commons.beanutils.BeanUtils;
 
 import javax.servlet.ServletException;
@@ -23,15 +24,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Map<String, String[]> pmap = req.getParameterMap();
-        User user = new User();
-        try {
-            BeanUtils.populate(user,pmap);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        }
+        User user = ParaUtils.populate(req);
         UserService us = new UserServiceImpl();
         User login_user = us.login(user);
         if(login_user != null){

@@ -56,22 +56,41 @@
         body{
             background-image: url("../../res/img/cover.jpg");
         }
+        input{
+            margin-top: 10px;
+        }
+        .select_g{
+            background-color: white;
+            height: 30px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        button{
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
 <div class="container">
 
-    <form class="form-signin" action="/loginServlet" method="post">
+    <form class="form-signin" action="/registerServlet" method="post">
         <h2 class="form-signin-heading">请先登录</h2>
         <label for="inputEmail" class="sr-only">用户名</label>
         <input type="text" id="inputEmail" class="form-control" placeholder="请输入你的用户名" name="username" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="请输入您的密码" name="password" required>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
-        <div style="margin-top: 10px">
-            <a class="btn-info" href="Register.jsp">没有账号？前往注册</a>
+        <label for="email" class="sr-only">Email</label>
+        <input type="text" id="email" class="form-control" placeholder="请输入您的邮箱" name="email" required>
+        <div class="select_g">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" style="margin-top: 10px" name="gender" required value="男" checked> 男&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style="margin-top: 10px" type="radio" name="gender" required  value="女">女
         </div>
-        <h3 align="center" style="color: red;font-weight: bolder; background-color: white">${login_msg}</h3>
+
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
+        <div style="margin-top: 10px">
+            <button class="btn-info" href="Login.jsp">已有账号？前往登录</button>
+        </div>
+        <h3 align="center" style="color: red;font-weight: bolder; background-color: white">${reg_msg}</h3>
 
     </form>
 

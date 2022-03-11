@@ -5,9 +5,14 @@ import net.f3322.wry333.dao.UserDao;
 import net.f3322.wry333.dao.UserDaoImpl;
 
 public class UserServiceImpl implements UserService{
+    private UserDao ud = new UserDaoImpl();
     @Override
     public User login(User user) {
-        UserDao ud = new UserDaoImpl();
         return ud.find(user);
+    }
+
+    @Override
+    public Boolean register(User user) {
+        return ud.insert(user);
     }
 }

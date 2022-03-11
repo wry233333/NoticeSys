@@ -21,4 +21,21 @@ public class UserDaoImpl implements UserDao{
         return user_succ;
     }
 
+    @Override
+    public Boolean insert(User user) {
+        String sql = "INSERT INTO user VALUES (?,?,?,?)";
+        int update = 0;
+        try {
+            update = jdbcTemplate.update(sql, user.getUsername(), user.getPassword(), user.getGender(), user.getEmail());
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+            return false;
+        }
+        if (update != 0){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }

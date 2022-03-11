@@ -69,7 +69,7 @@
         <input type="password" id="inputPassword" class="form-control" placeholder="请输入您的密码" name="password" required>
         <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
         <div style="margin-top: 10px">
-            <a class="btn-info" href="Register.jsp">没有账号？前往注册</a>
+            <a class="btn-info" href="/jsp/bin/Register.jsp">没有账号？前往注册</a>
         </div>
         <h3 align="center" style="color: red;font-weight: bolder; background-color: white">${login_msg}</h3>
 
