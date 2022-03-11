@@ -9,4 +9,6 @@ public interface NoticeService {
     List<Notice> search(String institute);
 
     List<Institute> institute();
+
+    Notice find(String name);
 }

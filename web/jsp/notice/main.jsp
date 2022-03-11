@@ -61,7 +61,7 @@
                     <div class="col-xs-6 col-lg-4">
                         <h2>${notice.name}</h2>
                         <p>${notice.info}</p>
-                        <p><a class="btn btn-default" href="#" role="button">查看更多 &raquo;</a></p>
+                        <p><a class="btn btn-default" href="/contextServlet?name=${notice.name}" role="button">查看更多 &raquo;</a></p>
                     </div>
                     <!--/.col-xs-6.col-lg-4-->
                 </c:forEach>

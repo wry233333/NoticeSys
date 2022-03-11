@@ -17,7 +17,7 @@ public class PathFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         String uri = request.getRequestURI();
-        if(uri.contains("/index.jsp") || uri.contains("/jsp/bin/Login.jsp") || uri.contains("/jsp/bin/Register.jsp") || uri.contains("/registerServlet") || uri.contains("/loginServlet")) {
+        if(uri.contains("/index.jsp") || uri.contains("/jsp/bin/Login.jsp") || uri.contains("/jsp/bin/Register.jsp") || uri.contains("/registerServlet") || uri.contains("/loginServlet") || uri.contains("/res/")) {
             filterChain.doFilter(servletRequest,servletResponse);
         }else{
             User user = (User) request.getSession().getAttribute("user");

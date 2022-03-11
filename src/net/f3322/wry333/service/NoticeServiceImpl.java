@@ -18,4 +18,9 @@ public class NoticeServiceImpl implements NoticeService{
     public List<Institute> institute() {
         return noticeDao.institute();
     }
+
+    @Override
+    public Notice find(String name) {
+        return noticeDao.find(name);
+    }
 }

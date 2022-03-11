@@ -36,4 +36,18 @@ public class NoticeDaoImpl implements NoticeDao{
         }
         return list;
     }
+
+    @Override
+    public Notice find(String name) {
+        Notice notice = new Notice();
+        String sql = "SELECT * FROM notice WHERE name = ?";
+        try {
+            notice = jdbcTemplate.queryForObject(sql,new BeanPropertyRowMapper<Notice>(Notice.class),name);
+        } catch (DataAccessException e) {
+
+            e.printStackTrace();
+            return null;
+        }
+        return notice;
+    }
 }
