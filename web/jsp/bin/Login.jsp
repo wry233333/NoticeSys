@@ -54,7 +54,13 @@
             border-top-right-radius: 0;
         }
         body{
-            background-image: url("../../res/img/cover.jpg");
+            background: url("../../res/img/cover.jpg")no-repeat;
+            width: 100%;
+            height: 100%; /* For at least Firefox */
+            min-height: 100%;
+            background-size:100% 100%;
+            position:absolute;
+            filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../res/img/cover.jpg',sizingMethod=scale);
         }
         input{
             margin-top: 10px;
@@ -72,9 +78,9 @@
         <input type="password" id="inputPassword" class="form-control" placeholder="请输入您的密码" name="password" required>
         <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
         <div style="margin-top: 10px">
-            <a class="btn-info" href="/jsp/bin/Register.jsp">没有账号？前往注册</a>
+            <a class="btn btn-info" href="/jsp/bin/Register.jsp">没有账号？前往注册</a>
         </div>
-        <h3 align="center" style="color: red;font-weight: bolder; background-color: white">${login_msg}</h3>
+        <p class="bg-danger" align="center" style="margin-top: 10px;color: white;background-color: red;font-weight: bolder; font-size: 25px; border-radius: 8px">${login_msg}</p>
 
     </form>
 

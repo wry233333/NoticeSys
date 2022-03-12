@@ -24,8 +24,8 @@
                         <nav>
                             <ul class="nav masthead-nav">
                                 <li class="active"><a href="#">主页</a></li>
-                                <li><a href="#">全部公告</a></li>
-                                <li><a href="#">登录</a></li>
+                                <li><a href="/indexServlet?institute=计算机学院">全部公告</a></li>
+                                <li><a href="/jsp/bin/Login.jsp">登录</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -34,7 +34,7 @@
                     <h1 class="cover-heading">欢迎使用公告系统</h1>
                     <p class="lead">本系统是用来展示部门公告和添加公告的</p>
                     <p class="lead">
-                        <a href="/jsp/bin/Login.jsp" class="btn btn-lg btn-default">进入系统</a>
+                        <a href="/indexServlet?institute=计算机学院" class="btn btn-lg btn-info">进入系统</a>
                     </p>
                 </div>
                 <div class="mastfoot">

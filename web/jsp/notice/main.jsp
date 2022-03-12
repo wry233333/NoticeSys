@@ -28,7 +28,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">公告系统</a>
+            <a class="navbar-brand" href="index.jsp">公告系统</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -56,12 +56,14 @@
                 <h1><%out.print(request.getAttribute("this"));%></h1>
                 <p>关于各个学院的简介内容</p>
             </div>
-            <div class="row">
+            <div class="row" style="border-bottom: 0px">
                 <c:forEach items="${list}" var="notice" varStatus="s">
-                    <div class="col-xs-6 col-lg-4">
-                        <h2>${notice.name}</h2>
-                        <p>${notice.info}</p>
-                        <p><a class="btn btn-default" href="/contextServlet?name=${notice.name}" role="button">查看更多 &raquo;</a></p>
+                    <div class="col-xs-6 col-lg-4" style="margin-top: 10px">
+                        <div style="background-color: white;border-radius: 10px;padding: 5px;">
+                        <h2>&nbsp;&nbsp;${notice.name}</h2>
+                        <p>&nbsp;&nbsp;${notice.info}</p>
+                        <p>&nbsp;&nbsp;<a class="btn btn-info" href="/contextServlet?name=${notice.name}" role="button">查看更多 &raquo;</a></p>
+                        </div>
                     </div>
                     <!--/.col-xs-6.col-lg-4-->
                 </c:forEach>
@@ -86,7 +88,6 @@
         </div><!--/.sidebar-offcanvas-->
     </div><!--/row-->
 
-    <hr>
 
     <footer>
         <p align="center">&copy; 2022 Group 6, make , powered by wry333</p>

@@ -54,7 +54,13 @@
             border-top-right-radius: 0;
         }
         body{
-            background-image: url("../../res/img/cover.jpg");
+            background: url("../../res/img/cover.jpg")no-repeat;
+            width: 100%;
+            height: 100%; /* For at least Firefox */
+            min-height: 100%;
+            background-size:100% 100%;
+            position:absolute;
+            filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../../res/img/cover.jpg',sizingMethod=scale);
         }
         input{
             margin-top: 10px;
@@ -88,9 +94,9 @@
 
         <button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
         <div style="margin-top: 10px">
-            <button class="btn-info" href="Login.jsp">已有账号？前往登录</button>
+            <a class="btn btn-info" href="Login.jsp">已有账号？前往登录</a>
         </div>
-        <h3 align="center" style="color: red;font-weight: bolder; background-color: white">${reg_msg}</h3>
+        <p class="bg-danger" align="center" style="color: white;font-weight: bolder; font-size: 25px; border-radius: 8px;margin-top: 10px">${reg_msg}</p>
 
     </form>
 
