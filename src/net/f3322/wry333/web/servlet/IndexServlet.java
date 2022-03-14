@@ -1,9 +1,9 @@
 package net.f3322.wry333.web.servlet;
 
-import net.f3322.wry333.bean.Institute;
-import net.f3322.wry333.bean.Notice;
-import net.f3322.wry333.service.NoticeService;
-import net.f3322.wry333.service.NoticeServiceImpl;
+import net.f3322.wry333.bean.Book;
+import net.f3322.wry333.bean.BookClasses;
+import net.f3322.wry333.service.BookService;
+import net.f3322.wry333.service.BookServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,16 +22,16 @@ public class IndexServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String institute = (String) req.getParameter("institute");
-        NoticeService noticeService = new NoticeServiceImpl();
-        List<Notice> list = noticeService.search(institute);
-        List<Institute> strings = noticeService.institute();
-        for (Notice l:list) {
+        String c_id = (String) req.getParameter("c_id");
+        BookService bookService = new BookServiceImpl();
+        List<Book> list = bookService.search(c_id);
+        List<BookClasses> strings = bookService.bookClasses();
+        for (Book l:list) {
             l.toString();
         }
         req.setAttribute("list",list);
-        req.setAttribute("institute",strings);
-        req.setAttribute("this",institute);
+        req.setAttribute("classes",strings);
+        req.setAttribute("this",c_id);
         req.getRequestDispatcher("/jsp/notice/main.jsp").forward(req,resp);
     }
 }

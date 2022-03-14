@@ -29,7 +29,7 @@ public class LoginServlet extends HttpServlet {
         User login_user = us.login(user);
         if(login_user != null){
             req.getSession().setAttribute("user",login_user);
-            req.getRequestDispatcher("/indexServlet?institute=计算机学院").forward(req,resp);
+            req.getRequestDispatcher("/indexServlet?c_id=1").forward(req,resp);
         }else {
             req.setAttribute("login_msg","账号或密码错误");
             req.getRequestDispatcher("/jsp/bin/Login.jsp").forward(req,resp);

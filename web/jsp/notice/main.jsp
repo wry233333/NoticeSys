@@ -1,5 +1,5 @@
 <%@ page import="java.util.List" %>
-<%@ page import="net.f3322.wry333.bean.Institute" %><%--
+<%@ page import="net.f3322.wry333.bean.BookClasses" %><%--
   Created by IntelliJ IDEA.
   User: WRY
   Date: 2022/3/11
@@ -10,7 +10,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>公告首页</title>
+    <title>首页</title>
     <link rel="icon" href="../../res/img/logo.ico">
     <link rel="stylesheet" href="../../res/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../res/css/offcanvas.css">
@@ -28,16 +28,17 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.jsp">公告系统</a>
+            <a class="navbar-brand" href="index.jsp">借阅系统</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">主页</a></li>
-                <li><a href="#">添加公告</a></li>
+                <li><a href="#">我的借阅记录</a></li>
                 <li><a href="#">联系我们</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">欢迎你：${user.getUsername()}</a></li>
+                <li><a href="#">退出登录</a></li>
             </ul>
         </div><!-- /.nav-collapse -->
     </div><!-- /.container -->
@@ -53,16 +54,24 @@
                 <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">切换导航</button>
             </p>
             <div class="jumbotron">
-                <h1><%out.print(request.getAttribute("this"));%></h1>
-                <p>关于各个学院的简介内容</p>
+                <%
+                    List<BookClasses> bookClasses = (List<BookClasses>)request.getAttribute("classes");
+                    String his = (String)request.getAttribute("this");
+                    String name = null;
+                    for (BookClasses b:bookClasses) {
+                        if(b.getC_id().equals(his))name=b.getName();
+                    }
+                %>
+                <h1><%out.print(name);%></h1>
+                <p>关于各个类别的简介内容</p>
             </div>
             <div class="row" style="border-bottom: 0px">
-                <c:forEach items="${list}" var="notice" varStatus="s">
+                <c:forEach items="${list}" var="book" varStatus="s">
                     <div class="col-xs-6 col-lg-4" style="margin-top: 10px">
                         <div style="background-color: white;border-radius: 10px;padding: 5px;">
-                        <h2>&nbsp;&nbsp;${notice.name}</h2>
-                        <p>&nbsp;&nbsp;${notice.info}</p>
-                        <p>&nbsp;&nbsp;<a class="btn btn-info" href="/contextServlet?name=${notice.name}" role="button">查看更多 &raquo;</a></p>
+                        <h2>&nbsp;&nbsp;${book.name}</h2>
+                        <p>&nbsp;&nbsp;${book.info}</p>
+                        <p>&nbsp;&nbsp;<a class="btn btn-info" href="/contextServlet?b_id=${book.b_id}" role="button">查看更多 &raquo;</a></p>
                         </div>
                     </div>
                     <!--/.col-xs-6.col-lg-4-->
@@ -73,14 +82,12 @@
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
             <div class="list-group">
                 <%
-                    List<Institute> institute = (List<Institute>)request.getAttribute("institute");
-                    String his = (String)request.getAttribute("this");
-                    for (Institute i:institute) {
-                        if(i.getName().equals(his)){
-                            out.println(" <a href=\"/indexServlet?institute="+i.getName()+"\" class=\"list-group-item active\">"+i.getName()+"</a>");
+                    for (BookClasses i: bookClasses) {
+                        if(i.getC_id().equals(his)){
+                            out.println(" <a href=\"/indexServlet?c_id="+i.getC_id()+"\" class=\"list-group-item active\">"+i.getName()+"</a>");
                         }
                         else {
-                            out.println(" <a href=\"/indexServlet?institute="+i.getName()+"\" class=\"list-group-item\">"+i.getName()+"</a>");
+                            out.println(" <a href=\"/indexServlet?c_id="+i.getC_id()+"\" class=\"list-group-item\">"+i.getName()+"</a>");
                         }
                     }
                 %>

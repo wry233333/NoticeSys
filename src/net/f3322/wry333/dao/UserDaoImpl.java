@@ -23,7 +23,7 @@ public class UserDaoImpl implements UserDao{
 
     @Override
     public Boolean insert(User user) {
-        String sql = "INSERT INTO user VALUES (?,?,?,?)";
+        String sql = "INSERT INTO user VALUES (null,?,?,?,?)";
         int update = 0;
         try {
             update = jdbcTemplate.update(sql, user.getUsername(), user.getPassword(), user.getGender(), user.getEmail());

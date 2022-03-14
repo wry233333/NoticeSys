@@ -39,13 +39,13 @@
 
 <body>
 <div class="div_c">
-    <h1 align="center">${notice.name}</h1>
+    <h1 align="center">${book.name}</h1>
     <hr/>
-    <p align="center">${notice.context}</p>
+    <p align="center">${book.context}</p>
 </div>
 
 <footer>
-    <div><a style="float: bottom" class="btn btn-info" href="/indexServlet?institute=${notice.institute}" role="button">返回学院<<</a></div>
+    <div><a style="float: bottom" class="btn btn-info" href="/indexServlet?c_id=${book.c_id}" role="button">返回学院<<</a></div>
 </footer>
 
 </body>

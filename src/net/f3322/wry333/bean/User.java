@@ -1,9 +1,19 @@
 package net.f3322.wry333.bean;
 
 public class User {
+    private String id;
     private String username;
     private String password;
     private String gender;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     private String email;
 
     public String getUsername() {
@@ -44,7 +54,8 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "username='" + username + '\'' +
+                "id='" + id + '\'' +
+                ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", gender='" + gender + '\'' +
                 ", email='" + email + '\'' +

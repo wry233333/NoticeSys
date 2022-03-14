@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>公告系统</title>
+    <title>借阅系统</title>
     <link rel="icon" href="/res/img/logo.ico">
     <link rel="stylesheet" href="/res/css/bootstrap.min.css">
     <link rel="stylesheet" href="/res/css/cover.css">
@@ -20,21 +20,21 @@
             <div class="cover-container">
                 <div class="masthead clearfix">
                     <div class="inner">
-                        <h3 class="masthead-brand">公告系统</h3>
+                        <h3 class="masthead-brand">借阅系统</h3>
                         <nav>
                             <ul class="nav masthead-nav">
                                 <li class="active"><a href="#">主页</a></li>
-                                <li><a href="/indexServlet?institute=计算机学院">全部公告</a></li>
+                                <li><a href="/indexServlet?c_id=1">全部分类</a></li>
                                 <li><a href="/jsp/bin/Login.jsp">登录</a></li>
                             </ul>
                         </nav>
                     </div>
                 </div>
                 <div class="inner cover">
-                    <h1 class="cover-heading">欢迎使用公告系统</h1>
-                    <p class="lead">本系统是用来展示部门公告和添加公告的</p>
+                    <h1 class="cover-heading">欢迎使用图书借阅系统</h1>
+                    <p class="lead">本系统是用来管理图书借阅的</p>
                     <p class="lead">
-                        <a href="/indexServlet?institute=计算机学院" class="btn btn-lg btn-info">进入系统</a>
+                        <a href="/indexServlet?bookClasses=计算机学院" class="btn btn-lg btn-info">进入系统</a>
                     </p>
                 </div>
                 <div class="mastfoot">

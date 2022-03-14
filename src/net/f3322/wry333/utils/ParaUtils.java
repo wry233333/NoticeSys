@@ -1,6 +1,6 @@
 package net.f3322.wry333.utils;
 
-import net.f3322.wry333.bean.Notice;
+import net.f3322.wry333.bean.Book;
 import net.f3322.wry333.bean.User;
 import org.apache.commons.beanutils.BeanUtils;
 
@@ -29,11 +29,11 @@ public class ParaUtils {
         return user;
     }
 
-    public static Notice populate_n(HttpServletRequest request){
-        Notice notice = new Notice();
+    public static Book populate_n(HttpServletRequest request){
+        Book book = new Book();
         Map<String, String[]> parameterMap = request.getParameterMap();
         try {
-            BeanUtils.populate(notice,parameterMap);
+            BeanUtils.populate(book,parameterMap);
         } catch (IllegalAccessException e) {
             e.printStackTrace();
             return null;
@@ -41,6 +41,6 @@ public class ParaUtils {
             e.printStackTrace();
             return null;
         }
-        return notice;
+        return book;
     }
 }

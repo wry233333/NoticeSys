@@ -1,8 +1,8 @@
 package net.f3322.wry333.web.servlet;
 
-import net.f3322.wry333.bean.Notice;
-import net.f3322.wry333.service.NoticeService;
-import net.f3322.wry333.service.NoticeServiceImpl;
+import net.f3322.wry333.bean.Book;
+import net.f3322.wry333.service.BookService;
+import net.f3322.wry333.service.BookServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,10 +15,10 @@ import java.io.IOException;
 public class ContextServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String name = req.getParameter("name");
-        NoticeService noticeService= new NoticeServiceImpl();
-        Notice notice = noticeService.find(name);
-        req.setAttribute("notice",notice);
+        String b_id = req.getParameter("b_id");
+        BookService bookService = new BookServiceImpl();
+        Book book = bookService.find(b_id);
+        req.setAttribute("book", book);
         req.getRequestDispatcher("/jsp/notice/context.jsp").forward(req,resp);
     }
 
