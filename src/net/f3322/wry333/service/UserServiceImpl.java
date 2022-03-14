@@ -15,4 +15,13 @@ public class UserServiceImpl implements UserService{
     public Boolean register(User user) {
         return ud.insert(user);
     }
+
+    @Override
+    public boolean reset(User user) {
+        User t_user = ud.findByEmail(user);
+        if(ud.resetPwd(t_user,user.getPassword())){
+            return true;
+        }
+        return false;
+    }
 }

@@ -38,4 +38,32 @@ public class UserDaoImpl implements UserDao{
             return false;
         }
     }
+
+
+    @Override
+    public User findByEmail(User user) {
+        String sql ="SELECT * FROM user WHERE email = ?";
+        User user_succ = null;
+        try {
+            user_succ = jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class),user.getEmail());
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+        }
+        return user_succ;
+    }
+
+    @Override
+    public boolean resetPwd(User t_use,String pwd) {
+        String sql = "update user set password = ? where id= ?";
+        try {
+            int i = jdbcTemplate.update(sql, pwd, t_use.getId());
+            if (i!=0){
+                return true;
+            }
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return false;
+    }
 }
