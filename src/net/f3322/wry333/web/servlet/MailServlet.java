@@ -3,8 +3,6 @@ package net.f3322.wry333.web.servlet;
 import net.f3322.wry333.bean.User;
 import net.f3322.wry333.dao.UserDao;
 import net.f3322.wry333.dao.UserDaoImpl;
-import net.f3322.wry333.service.UserService;
-import net.f3322.wry333.service.UserServiceImpl;
 import net.f3322.wry333.utils.MailUtils;
 
 import javax.servlet.ServletException;

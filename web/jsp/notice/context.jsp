@@ -33,6 +33,9 @@
         a{
             zoom: 150%;
         }
+        p{
+            font-size: 20px;
+        }
     </style>
     <link rel="stylesheet" href="../../res/css/bootstrap.min.css">
 </head>
@@ -40,6 +43,8 @@
 <body>
 <div class="div_c">
     <h1 align="center">${book.name}</h1>
+    <h4 align="center">出版商：${book.publisher}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作者：${book.author}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;出版日期：${book.date}</h4>
     <hr/>
     <p align="center">${book.context}</p>
 </div>

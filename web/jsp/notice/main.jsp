@@ -39,7 +39,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">欢迎你：${user.getUsername()}</a></li>
                 <li><a href="/jsp/notice/resetpwd.jsp">修改密码</a></li>
-                <li><a href="#">退出登录</a></li>
+                <li><a href="/logoutServlet">退出登录</a></li>
             </ul>
         </div><!-- /.nav-collapse -->
     </div><!-- /.container -->
