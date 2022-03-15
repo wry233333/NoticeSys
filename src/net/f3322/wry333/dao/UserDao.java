@@ -6,4 +6,8 @@ public interface UserDao {
     User find(User user);
 
     Boolean insert(User user);
+
+    User findByEmail(User user);
+
+    boolean resetPwd(User t_user,String pwd);
 }
