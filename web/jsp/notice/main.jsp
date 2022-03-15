@@ -33,7 +33,7 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">主页</a></li>
-                <li><a href="#">我的借阅记录</a></li>
+                <li><a href="/jsp/list/ItemList.jsp">我的借阅记录</a></li>
                 <li><a href="#">联系我们</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
