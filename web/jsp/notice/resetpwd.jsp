@@ -100,9 +100,10 @@
         <label for="inputPassword" class="sr-only">请确认密码：</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="请确认密码" name="password" required>
         <button id="confirm" class="btn btn-lg btn-primary btn-block" type="submit" >重置密码</button>
+        <p class="bg-danger" align="center"
+           style="margin-top: 10px;color: white;background-color: red;font-weight: bolder; font-size: 25px; border-radius: 8px">${reset_msg}</p>
     </form>
-    <p class="bg-danger" align="center"
-       style="margin-top: 10px;color: white;background-color: red;font-weight: bolder; font-size: 25px; border-radius: 8px">${reset_msg}</p>
+
 </div>
 </body>
 </html>
