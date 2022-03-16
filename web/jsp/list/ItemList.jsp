@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: WRY
@@ -72,6 +73,7 @@
         <div style="width: 100%">
             <table class="table table-hover">
                 <tr>
+                    <td>#</td>
                     <td>记录编号</td>
                     <td>图书名称</td>
                     <td>借阅时间</td>
@@ -79,14 +81,18 @@
                     <td>归还时间</td>
                     <td>操作</td>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                <c:forEach items="${itemList}" var="i" varStatus="s">
+                    <tr>
+                        <td>${s.count}</td>
+                        <td>${i.l_id}</td>
+                        <td>${i.b_name}</td>
+                        <td>${i.borrow_date}</td>
+                        <td>${i.return_date}</td>
+                        <td>${i.rel_date}</td>
+                        <td><input class="btn btn-info" type="button" value="延时"></td>
+                    </tr>
+                </c:forEach>
+
             </table>
         </div>
     </div>

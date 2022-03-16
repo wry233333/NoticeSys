@@ -7,6 +7,15 @@ public class Item {
     private String return_date;//约定还书日期
     private String borrow_date;//借阅书籍日期
     private String rel_date;//实际还书日期
+    private String b_name;//图书名称
+
+    public String getB_name() {
+        return b_name;
+    }
+
+    public void setB_name(String b_name) {
+        this.b_name = b_name;
+    }
 
     public String getL_id() {
         return l_id;
