@@ -13,6 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+
+/**
+ * 用于按用户id查找借阅记录的servlet
+ */
 @WebServlet("/itemListServlet")
 public class ItemListServlet extends HttpServlet {
     @Override

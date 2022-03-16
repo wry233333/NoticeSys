@@ -12,6 +12,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+
+/**
+ *
+ * 处理用户提交重置密码表单的servlet
+ *
+ */
+
 @WebServlet("/resetServlet")
 public class RestServlet extends HttpServlet {
     @Override

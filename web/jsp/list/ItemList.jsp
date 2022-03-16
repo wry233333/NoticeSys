@@ -62,11 +62,11 @@
     </div><!-- /.container -->
 </nav><!-- /.navbar -->
 <div class="container">
-    <div class="jumbotron" style="margin-top: 70px">
+    <div class="jumbotron" style="margin-top: 70px;">
         <h1>你的借阅记录</h1>
         <p>您在本系统借阅的历史记录将在本页显示，请记得按时还书哦.......</p>
     </div>
-    <div class="jumbotron"style= "margin-top: 20px">
+    <div class="jumbotron"style= "margin-top: 20px;">
         <div class="page-header">
             <h3>借阅记录&nbsp;&nbsp;&nbsp;&nbsp;<small>用户:${user.username}</small></h3>
         </div>
@@ -88,8 +88,12 @@
                         <td>${i.b_name}</td>
                         <td>${i.borrow_date}</td>
                         <td>${i.return_date}</td>
-                        <td>${i.rel_date}</td>
-                        <td><input class="btn btn-info" type="button" value="延时"></td>
+                        <td>
+                            <c:if test="${i.rel_date == null}">
+                            未归还
+                            </c:if>${i.rel_date}
+                        </td>
+                        <td><c:if test="${i.rel_date == null}"><a href="#" class="btn btn-info" type="button" >延时</a></c:if></td>
                     </tr>
                 </c:forEach>
 

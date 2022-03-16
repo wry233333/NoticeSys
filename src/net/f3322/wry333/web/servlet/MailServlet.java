@@ -12,6 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Random;
+
+
+/**
+ * 用于找回密码发送密码重置邮件的servlet
+ */
 @WebServlet("/mailServlet")
 public class MailServlet extends HttpServlet {
     @Override
