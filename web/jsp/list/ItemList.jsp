@@ -68,7 +68,7 @@
     </div>
     <div class="jumbotron"style= "margin-top: 20px;">
         <div class="page-header">
-            <h3>借阅记录&nbsp;&nbsp;&nbsp;&nbsp;<small>用户:${user.username}</small></h3>
+            <h3>借阅记录&nbsp;&nbsp;&nbsp;&nbsp;<small>用户:${user.username}</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small style="color: red">${adj_msg}</small></h3>
         </div>
         <div style="width: 100%">
             <table class="table table-hover">
@@ -93,7 +93,7 @@
                             未归还
                             </c:if>${i.rel_date}
                         </td>
-                        <td><c:if test="${i.rel_date == null}"><a href="#" class="btn btn-info" type="button" >延时</a></c:if></td>
+                        <td><c:if test="${i.rel_date == null}"><a href="/itemAdjServlet?l_id=${i.l_id}" class="btn btn-info" type="button" >延时</a></c:if></td>
                     </tr>
                 </c:forEach>
 

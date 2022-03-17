@@ -22,4 +22,49 @@ public class ItemDaoImpl implements ItemDao{
         }
         return list;
     }
+
+
+    @Override
+    public Item findByL_id(String l_id) {
+        String sql = "SELECT * FROM list WHERE l_id = ?";
+        Item item = null;
+        try {
+            item = jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<Item>(Item.class), l_id);
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+        }
+        return item;
+    }
+
+
+    @Override
+    public boolean adjReturn_date(String l_id, String backTime) {
+        String sql = "UPDATE list SET return_date = ? WHERE l_id = ?";
+        try {
+            int update = jdbcTemplate.update(sql, backTime, l_id);
+            if (update != 0){
+                return true;
+            }
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return false;
+    }
+
+
+    @Override
+    public boolean addItem(Item item) {
+        String sql = "insert into list values (null,?,?,?,?,null)";
+        try {
+            int update = jdbcTemplate.update(sql, item.getId(), item.getB_id(), item.getReturn_date(), item.getBorrow_date());
+            if( update != 0){
+                return true;
+            }
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return false;
+    }
 }

@@ -50,7 +50,7 @@
 </div>
 
 <footer>
-    <div><a style="float: bottom" class="btn btn-info" href="/indexServlet?c_id=${book.c_id}" role="button">返回学院<<</a></div>
+    <div><a style="float: bottom" class="btn btn-info" href="/indexServlet?c_id=${book.c_id}" role="button">返回主页<<</a><a style="float: bottom;margin-left: 200px" class="btn btn-success" href="/bookingServlet?id=${user.id}&b_id=${book.b_id}" role="button">添加借阅>></a></div>
 </footer>
 
 </body>

@@ -6,4 +6,8 @@ import java.util.List;
 
 public interface ItemService {
     List<Item> list(String id);
+
+    boolean adjTime(String l_id);
+
+    boolean  addItem(Item item, String time);
 }

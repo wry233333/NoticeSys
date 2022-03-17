@@ -6,4 +6,10 @@ import java.util.List;
 
 public interface ItemDao {
     List<Item> findListByID(String id);
+
+    Item findByL_id(String l_id);
+
+    boolean adjReturn_date(String l_id, String backTime);
+
+    boolean addItem(Item item);
 }

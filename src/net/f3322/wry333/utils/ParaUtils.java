@@ -1,6 +1,7 @@
 package net.f3322.wry333.utils;
 
 import net.f3322.wry333.bean.Book;
+import net.f3322.wry333.bean.Item;
 import net.f3322.wry333.bean.User;
 import org.apache.commons.beanutils.BeanUtils;
 
@@ -29,6 +30,11 @@ public class ParaUtils {
         return user;
     }
 
+    /**
+     * 自动封装书籍
+     * @param request
+     * @return
+     */
     public static Book populate_n(HttpServletRequest request){
         Book book = new Book();
         Map<String, String[]> parameterMap = request.getParameterMap();
@@ -43,4 +49,25 @@ public class ParaUtils {
         }
         return book;
     }
+
+    /**
+     * 自动封装订单
+     * @param request
+     * @return
+     */
+    public static Item populate_i(HttpServletRequest request){
+        Item item = new Item();
+        Map<String, String[]> parameterMap = request.getParameterMap();
+        try {
+            BeanUtils.populate(item,parameterMap);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+            return null;
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return item;
+    }
+
 }
