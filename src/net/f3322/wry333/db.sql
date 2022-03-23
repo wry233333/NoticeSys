@@ -5,10 +5,10 @@ use BookSys_db;
 
 create table user(
     id bigint AUTO_INCREMENT primary key ,
-    username varchar(32) not null unique,
+    username varchar(32) not null,
     password varchar(32) not null,
     gender varchar(4),
-    email varchar(64) not null
+    email varchar(64) not null unique
 );
 insert into user values (null,'zhangsan','1234','男','12345@china.gov.cn');
 

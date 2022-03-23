@@ -26,6 +26,7 @@
                                 <li class="active"><a href="#">主页</a></li>
                                 <li><a href="/indexServlet?c_id=1">全部分类</a></li>
                                 <li><a href="/jsp/bin/Login.jsp">登录</a></li>
+                                <li><a href="/jsp/notice/resetpwd.jsp">修改密码</a></li>
                             </ul>
                         </nav>
                     </div>
