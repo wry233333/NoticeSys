@@ -10,10 +10,10 @@ public class AddDaoImpl implements AddDao {
 
     @Override
     public Boolean insert(Book add) {
-        String sql = "INSERT INTO book VALUES (?,?,?,?)";
+        String sql = "INSERT INTO book VALUES (null,?,?,?,?,?,?,?)";
         int update = 0;
         try {
-            update = jdbcTemplate.update(sql, add.getB_id(), add.getName(), add.getPublisher(), add.getAuthor(),add.getDate(),add.getInfo(),add.getContext(),add.getC_id());
+            update = jdbcTemplate.update(sql, add.getName(), add.getPublisher(), add.getAuthor(),add.getDate(),add.getInfo(),add.getContext(),add.getC_id());
         } catch (DataAccessException e) {
             e.printStackTrace();
             return false;
