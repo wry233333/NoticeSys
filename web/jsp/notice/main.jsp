@@ -32,10 +32,10 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">主页</a></li>
-                <li><a href="#">我的借阅记录</a></li>
-                <li><a href="/AddServlet">联系我们</a></li>
-
+                <li class="active"><a href="/index.jsp">主页</a></li>
+                <li><a href="/itemListServlet">我的借阅记录</a></li>
+                <li><a href="/AddServlet">添加书籍</a></li>
+                <li><a href="/FindServlet">删除书籍</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">欢迎你：${user.getUsername()}</a></li>
