@@ -33,6 +33,9 @@
         a{
             zoom: 150%;
         }
+        p{
+            font-size: 20px;
+        }
     </style>
     <link rel="stylesheet" href="../../res/css/bootstrap.min.css">
 </head>
@@ -40,12 +43,14 @@
 <body>
 <div class="div_c">
     <h1 align="center">${book.name}</h1>
+    <h4 align="center">出版商：${book.publisher}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作者：${book.author}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;出版日期：${book.date}</h4>
     <hr/>
     <p align="center">${book.context}</p>
 </div>
 
 <footer>
-    <div><a style="float: bottom" class="btn btn-info" href="/indexServlet?c_id=${book.c_id}" role="button">返回学院<<</a></div>
+    <div><a style="float: bottom" class="btn btn-info" href="/indexServlet?c_id=${book.c_id}" role="button">返回主页<<</a><a style="float: bottom;margin-left: 200px" class="btn btn-success" href="/bookingServlet?id=${user.id}&b_id=${book.b_id}" role="button">添加借阅>></a></div>
 </footer>
 
 </body>

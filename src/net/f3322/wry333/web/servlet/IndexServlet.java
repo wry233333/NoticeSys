@@ -13,6 +13,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+
+/**
+ * 用于分类查找书籍的servlet
+ *
+ */
+
+
 @WebServlet("/indexServlet")
 public class IndexServlet extends HttpServlet {
     @Override

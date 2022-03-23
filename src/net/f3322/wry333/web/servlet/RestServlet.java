@@ -12,6 +12,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+
+/**
+ *
+ * 处理用户提交重置密码表单的servlet
+ *
+ */
+
 @WebServlet("/resetServlet")
 public class RestServlet extends HttpServlet {
     @Override
@@ -26,7 +33,7 @@ public class RestServlet extends HttpServlet {
         UserService userService = new UserServiceImpl();
         String check = (String)req.getSession().getAttribute("Check");
         String code = (String)req.getParameter("check-code");
-        if(userService.reset(user) && check.equals(code)){
+        if(user!=null && userService.reset(user) && check.equals(code)){
             req.setAttribute("login_msg","修改成功");
             req.getRequestDispatcher("/jsp/bin/Login.jsp").forward(req,resp);
         }

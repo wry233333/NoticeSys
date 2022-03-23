@@ -35,11 +35,12 @@
                 <li class="active"><a href="#">主页</a></li>
                 <li><a href="#">我的借阅记录</a></li>
                 <li><a href="/AddServlet">联系我们</a></li>
+
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">欢迎你：${user.getUsername()}</a></li>
                 <li><a href="/jsp/notice/resetpwd.jsp">修改密码</a></li>
-                <li><a href="#">退出登录</a></li>
+                <li><a href="/logoutServlet">退出登录</a></li>
             </ul>
         </div><!-- /.nav-collapse -->
     </div><!-- /.container -->

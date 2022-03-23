@@ -12,8 +12,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.util.Map;
+
+
+/**
+ * 处理用户登录的servlet
+ *
+ *
+ */
 
 @WebServlet("/loginServlet")
 public class LoginServlet extends HttpServlet {
