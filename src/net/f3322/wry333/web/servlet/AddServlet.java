@@ -25,7 +25,7 @@ public class AddServlet extends HttpServlet {
             req.getRequestDispatcher("/jsp/notice/AddPost.jsp").forward(req,resp);
         }
         else {
-            req.setAttribute("add_msg","添加失败");
+            req.setAttribute("add_msg","请按正确格式插入书籍");
             req.getRequestDispatcher("/jsp/notice/AddPost.jsp").forward(req,resp);
         }
     }

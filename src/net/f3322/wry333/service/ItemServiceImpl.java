@@ -60,4 +60,23 @@ public class ItemServiceImpl implements ItemService{
         }
         return false;
     }
+
+
+    private ItemDao dao = new ItemDaoImpl();
+    //    private JdbcTemplate template = new JdbcTemplate(JDBCUtils.getDataSource());
+    @Override
+    public List<Item> findAll() {
+
+        return dao.findAll();
+    }
+
+    @Override
+    public void addItem(Item item) {
+        dao.add(item);
+    }
+
+    @Override
+    public void deleteItem(String l_id) {
+        dao.delete(l_id);
+    }
 }

@@ -12,4 +12,11 @@ public interface ItemDao {
     boolean adjReturn_date(String l_id, String backTime);
 
     boolean addItem(Item item);
+
+
+    public List<Item> findAll();
+
+    void add(Item item);
+
+    void delete(String item);
 }

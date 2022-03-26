@@ -67,4 +67,33 @@ public class ItemDaoImpl implements ItemDao{
         }
         return false;
     }
+
+
+    public List<Item> findAll() {
+        //使用JDBC操作数据库...
+        //1.定义sql
+        String sql ="SELECT * FROM list";
+        List<Item> items = jdbcTemplate.query(sql,new BeanPropertyRowMapper<Item>(Item.class));
+
+        return items;
+    }
+
+    @Override
+    public void add(Item item) {
+        //1.定义sql
+        String sql ="insert into list values(null,?,?,?,?,?)";
+        //2.执行sql
+        jdbcTemplate.update(sql,item.getL_id(),item.getId(),item.getB_id(),item.getReturn_date(),item.getBorrow_date(),item.getRel_date());
+
+    }
+
+    @Override
+    public void delete(String l_id) {
+        //定义sql
+        String sql = "delete from list where l_id = ?";
+        //2.执行sql
+        jdbcTemplate.update(sql, l_id);
+
+    }
+
 }
