@@ -83,7 +83,7 @@ public class ItemDaoImpl implements ItemDao{
         //1.定义sql
         String sql ="insert into list values(null,?,?,?,?,?)";
         //2.执行sql
-        jdbcTemplate.update(sql,item.getL_id(),item.getId(),item.getB_id(),item.getReturn_date(),item.getBorrow_date(),item.getRel_date());
+        jdbcTemplate.update(sql,item.getId(),item.getB_id(),item.getReturn_date(),item.getBorrow_date(),item.getRel_date());
 
     }
 

@@ -72,10 +72,18 @@
                 <td>${item.borrow_date}</td>
                 <td>${item.rel_date}</td>
                 <td>
-                    <a class="btn btn-default btn-sm" href="javascript:deleteItem(${item.l_id});">删除</a></td>
+                    <a class="btn btn-default btn-sm" href="javascript:deleteItem(${item.l_id});">删除</a>
+                    <a class="btn btn-default btn-sm" href="/itemAdjServlet1?l_id=${item.l_id}">延时</a>
+
+                </td>
             </tr>
         </c:forEach>
 
+        <tr>
+
+            <td>${adj_msg}</td>
+            <td colspan="8" align="center"><a class="btn btn-primary" href="${pageContext.request.contextPath}/jsp/notice/add.jsp">添加借阅信息</a></td>
+        </tr>
 
 
     </table>
