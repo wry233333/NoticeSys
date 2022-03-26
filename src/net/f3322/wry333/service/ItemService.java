@@ -10,4 +10,24 @@ public interface ItemService {
     boolean adjTime(String l_id);
 
     boolean  addItem(Item item, String time);
+
+    /**
+     * 查询所有借阅信息
+     * @return
+     */
+    public List<Item> findAll();
+
+
+    /**
+     * 保存Item
+     * @param item
+     */
+    void addItem(Item item);
+
+
+    /**
+     * 根据l_id删除item
+     * @param l_id
+     */
+    void deleteItem(String l_id);
 }
